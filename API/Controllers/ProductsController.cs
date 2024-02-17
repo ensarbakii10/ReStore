@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("ensar/api/[controller]")]
     public class ProductsController : ControllerBase
     {
     private readonly StoreContext _context;
