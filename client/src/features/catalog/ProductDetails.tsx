@@ -8,8 +8,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../../app/Models/product";
 import agent from "../../app/api/agent";
@@ -25,7 +24,7 @@ export default function ProductDetails() {
     id &&
       agent.Catalog.details(parseInt(id))
         .then((response) => setProduct(response))
-        .catch((error) => console.log(error.response))
+        .catch((error) => console.log(error))
         .finally(() => setLoading(false));
   }, [id]);
 
@@ -50,7 +49,7 @@ export default function ProductDetails() {
         </Typography>
         <TableContainer>
           <Table>
-            <TableBody>
+            <TableBody sx={{ fontSize: "1.1em" }}>
               <TableRow>
                 <TableCell>Name</TableCell>
                 <TableCell>{product.name}</TableCell>
